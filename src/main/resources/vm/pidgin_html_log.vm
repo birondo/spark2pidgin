@@ -1,0 +1,13 @@
+## This unindented layout is intentional.
+## Pidgin may parse the content of the first line as title for the history window.
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>$esc.escapeHtml($title)</title></head><body><h3>$esc.escapeHtml($heading)</h3>
+#foreach($msg in $messages)
+#if ($msg.getFrom().indexOf($owner) >= 0)
+#set ($fontColor = "#16569E")
+#else
+#set ($fontColor = "#A82F2F")
+#end
+<font color="$fontColor"><font size="2">($msg.getFormattedTime()) </font><b>$esc.escapeHtml($msg.getFrom()): </b></font>$esc.escapeHtml($msg.getBody()).replaceAll("\n", "<br />")<br />
+#end
+</body>
+</html>

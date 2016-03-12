@@ -82,20 +82,11 @@ public class TranscriptParserTest {
 	}
 
 	@Test
-	public void testParse() {
+	public void testParse() throws ParserConfigurationException, SAXException,
+	    IOException, ParseException {
 		TranscriptParser obj = new TranscriptParser(sampleLog);
-		try {
-			Set<Message> msgSet = obj.parse();
-			assertNotNull(msgSet);
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-		} catch (SAXException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+		Set<Message> msgSet = obj.parse();
+		assertNotNull(msgSet);
 	}
 
 }

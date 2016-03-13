@@ -9,8 +9,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import me.chan.spark2pidgin.AppConstants;
 import me.chan.spark2pidgin.spark.Transcript;
@@ -23,7 +23,7 @@ import me.chan.spark2pidgin.spark.TranscriptMessages;
  */
 public class HtmlLogToFileManager {
 
-	private static final Log LOG = LogFactory.getLog(HtmlLogToFileManager.class);
+	private static final Logger LOG = LoggerFactory.getLogger(HtmlLogToFileManager.class);
 
 	private String outputDirPath;
 
@@ -42,7 +42,7 @@ public class HtmlLogToFileManager {
 	 * @throws IOException
 	 */
 	protected void initOutputDir() throws IOException {
-		Files.createDirectory(Paths.get(this.outputDirPath));
+		Files.createDirectories(Paths.get(this.outputDirPath));
 	}
 
 	/**
@@ -56,6 +56,10 @@ public class HtmlLogToFileManager {
 	public void convertToHtmlLog(Map<String, Transcript> transcripts)
 	    throws IOException {
 		if (!transcripts.isEmpty()) {
+			if (LOG.isInfoEnabled()) {
+				LOG.info("Writing html logs to " + this.outputDirPath);
+			}
+
 			Iterator<String> transriptKey = transcripts.keySet().iterator();
 			while (transriptKey.hasNext()) {
 				String contactName = transriptKey.next();

@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXParseException;
 
 /**
@@ -20,8 +20,8 @@ import org.xml.sax.SAXParseException;
  */
 public class TranscriptParserManager {
 
-	private static final Log LOG = LogFactory
-	    .getLog(TranscriptParserManager.class);
+	private static final Logger LOG = LoggerFactory
+	    .getLogger(TranscriptParserManager.class);
 
 	private String logDirectory;
 	private Map<String, Transcript> transcripts;

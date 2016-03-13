@@ -1,7 +1,7 @@
 package me.chan.spark2pidgin.converter;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import me.chan.spark2pidgin.AppConstants;
 import me.chan.spark2pidgin.pidgin.HtmlLogToFileManager;
@@ -13,8 +13,8 @@ import me.chan.spark2pidgin.spark.TranscriptParserManager;
  */
 public class Spark2PidginLogConverter {
 
-	private static final Log LOG = LogFactory
-	    .getLog(Spark2PidginLogConverter.class);
+	private static final Logger LOG = LoggerFactory
+	    .getLogger(Spark2PidginLogConverter.class);
 
 	public Spark2PidginLogConverter() {
 		// empty
@@ -44,7 +44,7 @@ public class Spark2PidginLogConverter {
 	 */
 	public static void main(String[] args) {
 		try {
-			LOG.info("Running Spark2PidginLogConverter..");
+			LOG.info("Running Spark2PidginLogConverter.");
 			new Spark2PidginLogConverter().process();
 		} catch (Exception e) {
 			if (LOG.isDebugEnabled()) {

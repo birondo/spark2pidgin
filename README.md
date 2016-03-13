@@ -38,7 +38,7 @@ pidgin.log_folder=C:\\WORKSPACE\\spark2pidgin\\pidgin
    cmd>java -cp .;lib;props;spark2pidgin-<version>.jar me.chan.spark2pidgin.converter.Spark2PidginLogConverter
    ```
 
-5. Preview the generated html log files. Then moove the converted files to  your .purple directory. Please refer to Pidgin documentation on where to place your newly converted log files under .purple directory.
+5. Preview the generated html log files. Then move the converted files to  your .purple directory. Please refer to Pidgin documentation on where to place your newly converted log files under .purple directory.
 
 ## License
 

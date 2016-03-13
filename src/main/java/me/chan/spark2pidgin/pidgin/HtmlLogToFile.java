@@ -53,7 +53,7 @@ public class HtmlLogToFile {
 	 * @throws IOException
 	 */
 	protected void initOutputDir() throws IOException {
-		Files.createDirectory(Paths.get(this.outputDirPath));
+		Files.createDirectories(Paths.get(this.outputDirPath));
 	}
 
 	/**
